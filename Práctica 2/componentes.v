@@ -1,19 +1,23 @@
 /*=========================================================================
 ===========================================================================
-    =            Proyecto:      Práctica 2                            =
+    =            Proyecto:      PrÃ¡ctica 2                            =
     =            Archivo:       componentes.v                         =
-    =            Autores:       Miguel Ordoñez Morales                =
-    =                           Adrián Epifanio R.H                   =
+    =            Autores:       Miguel OrdoÃ±ez Morales                =
+    =                           AdriÃ¡n Epifanio R.H                   =
     =            Fecha:         26/11/2018                            =
     =            Asignatura:    Estructuras de computadores           =
     =            Lenguaje:      Verilog                               = 
 ===========================================================================          
 =========================================================================*/
+
+/*===================================================================
+=                            MODULE                                 =
+===================================================================*/
 //Componentes varios
 
 //Banco de registros de dos salidas y una entrada
 module regfile(input  wire        clk, 
-               input  wire        we3,           //señal de habilitación de escritura
+               input  wire        we3,           //seÃ±al de habilitaciÃ³n de escritura
                input  wire [3:0]  ra1, ra2, wa3, //direcciones de regs leidos y reg a escribir
                input  wire [7:0]  wd3,       //dato a escribir
                output wire [7:0]  rd1, rd2);     //datos leidos
@@ -63,7 +67,7 @@ module mux2 #(parameter WIDTH = 8)
 endmodule
 
 //Biestable para el flag de cero
-//Biestable síncrono con reset asíncrono por flanco y entrada de habilitación de carga
+//Biestable sÃ­ncrono con reset asÃ­ncrono por flanco y entrada de habilitaciÃ³n de carga
 module ffd(input wire clk, reset, d, carga, output reg q);
   always @(posedge clk, posedge reset)
     if (reset)
@@ -72,18 +76,14 @@ module ffd(input wire clk, reset, d, carga, output reg q);
       if (carga)
         q <= d;
 endmodule 
-/*===================================================================
-=                            MODULE                                 =
-===================================================================*/
-
 
 /*===================================================================*/
 /*=========================  End of module  =========================*/
 /**
  *
  *
- *   Autores:  Miguel Ordoñez Morales
- *             Adrián Epifanio R.H
+ *   Autores:  Miguel OrdoÃ±ez Morales
+ *             AdriÃ¡n Epifanio R.H
  *   Fecha:    26/11/2018
  *
  *
